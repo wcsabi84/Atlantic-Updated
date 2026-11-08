@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://docs.google.com; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>Atlantic Coast Tours · Ask the Coast</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="chatbot.js" defer></script>
+</head>
+<body>
+  <header><div class="brand"><span class="brand-mark" aria-hidden="true">≈</span><div>Atlantic Coast Tours<small>IRELAND, WITH A LOCAL</small></div></div><span class="local-badge">LOCAL CLASSROOM PROJECT</span></header>
+  <section class="hero"><div class="eyebrow">THE WEST OF IRELAND IS CALLING</div><h1>A little local knowledge.<br><em>A great big adventure.</em></h1><p>Cliff walks, island escapes, and everything in between. Explore our tours with prices, schedules and spaces from our live tour sheet.</p><div class="coast" aria-hidden="true"><span>~</span><span>~</span><span>~</span></div></section>
+  <section class="data-bar" aria-label="Spreadsheet connection"><div><strong id="data-status" role="status">Connecting to Google Sheets…</strong><p id="last-refresh">No successful refresh yet.</p></div><button id="refresh" type="button">Refresh Data ↻</button></section>
+  <div id="warning" role="alert" hidden></div>
+  <main>
+    <section class="chat-panel" aria-label="Tour chatbot"><div class="panel-heading"><div><span class="eyebrow">YOUR LOCAL GUIDE</span><h2>Ask the Coast</h2></div><button id="clear" class="text-button" type="button">New conversation</button></div>
+      <div id="messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+      <div class="suggestions"><button type="button">Tours under €50</button><button type="button">Special offers</button><button type="button">Available in Doolin</button><button type="button">Recommend a cycling tour</button></div>
+      <form id="chat-form"><label class="sr-only" for="question">Ask about tours</label><input id="question" maxlength="1000" placeholder="Ask about tours, prices, or this week’s spaces…" autocomplete="off" required><button id="send" type="submit" aria-label="Send question">↑</button></form>
+      <p class="chat-note">Browser-based search and conversational rules. Answers use the last successful sheet refresh. Weekly spaces are not a booking confirmation.</p>
+    </section>
+    <aside aria-label="Tour catalogue"><div class="catalogue-heading"><h2>Find your adventure</h2><span id="tour-count">— tours</span></div><div class="filters"><label class="sr-only" for="tour-search">Search tours or places</label><input id="tour-search" placeholder="Search tours or places"><label class="sr-only" for="category">Tour type</label><select id="category"><option value="">All types</option></select></div><div id="catalogue"><p class="empty">Your tours will appear when the sheet connects.</p></div></aside>
+  </main>
+  <footer><span>Atlantic Coast Tours · West of Ireland</span><span>Local files · Read-only Google Sheet · No paid services</span></footer>
+</body>
+</html>
